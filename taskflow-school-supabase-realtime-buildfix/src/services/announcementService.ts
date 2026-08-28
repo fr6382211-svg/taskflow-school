@@ -1,6 +1,0 @@
-import { supabase } from '../lib/supabase';
-import { subscribeToPostgresChanges } from '../lib/realtime'; import type { Announcement } from '../types';
-const map=(r:any):Announcement=>({id:r.id,title:r.title,body:r.body,priority:r.priority,createdBy:r.created_by,createdAt:r.created_at,expiresAt:r.expires_at||undefined,active:r.active});
-export function subscribeAnnouncements(cb:(x:Announcement[])=>void,onError?:(e:unknown)=>void){let alive=true;const load=async()=>{const {data,error}=await supabase.from('announcements').select('*').eq('active',true).order('created_at',{ascending:false}).limit(20);if(error){onError?.(error);return}if(alive)cb((data||[]).map(map))};void load();const unsubscribe=subscribeToPostgresChanges({topic:'announcements',table:'announcements',onChange:()=>void load(),onError});return()=>{alive=false;unsubscribe()}}
-export async function createAnnouncement(userId:string,d:{title:string;body:string;priority:Announcement['priority']}){const {error}=await supabase.from('announcements').insert({title:d.title.trim(),body:d.body.trim(),priority:d.priority,created_by:userId,active:true});if(error)throw error}
-export async function deleteAnnouncement(id:string){const {error}=await supabase.from('announcements').delete().eq('id',id);if(error)throw error}

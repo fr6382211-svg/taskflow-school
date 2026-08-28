@@ -1,8 +1,0 @@
-import { useEffect, useState } from 'react';
-import Card from '../components/ui/Card';
-import ScheduleTimeline from '../components/schedule/ScheduleTimeline';
-import Skeleton from '../components/ui/Skeleton';
-import { useSchedule,useScheduleHelpers } from '../hooks/useSchedule';
-import { cn } from '../lib/utils';
-import { trackEvent } from '../lib/analytics';
-export default function Schedule(){const {items,loading}=useSchedule();const {days,todayName,current}=useScheduleHelpers(items);const [day,setDay]=useState<typeof days[number]>(todayName as typeof days[number]);const selected=items.filter(i=>i.day===day).sort((a,b)=>a.startTime.localeCompare(b.startTime));useEffect(()=>{trackEvent('schedule_viewed');},[]);return <div className="space-y-5 fade-up"><div><h1 className="text-2xl font-extrabold tracking-tight">Jadwal Sekolah</h1><p className="mt-1 text-sm text-slate-500">Jadwal berasal dari Supabase Postgres dan dapat dikelola admin.</p></div><Card className="overflow-hidden"><div className="scrollbar-hide flex overflow-x-auto border-b border-slate-100 p-2">{days.map(d=><button key={d} onClick={()=>setDay(d)} className={cn('min-w-24 rounded-xl px-4 py-2.5 text-sm font-bold transition',day===d?'bg-blue-600 text-white':'text-slate-500 hover:bg-slate-50')}>{d}<span className="ml-1 text-[10px] opacity-70">{d===todayName?'• Hari ini':''}</span></button>)}</div><div className="p-4 md:p-6">{loading?<div className="space-y-2">{[1,2,3,4,5].map(i=><Skeleton key={i} className="h-16"/>)}</div>:<ScheduleTimeline items={selected} currentId={day===todayName?current?.id:undefined}/>}</div></Card></div>}

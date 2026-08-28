@@ -1,4 +1,0 @@
-import { supabase } from '../lib/supabase'; import type { AuditLog } from '../types';
-const map=(r:any):AuditLog=>({id:r.id,userId:r.user_id,userEmail:r.user_email,action:r.action,targetType:r.target_type||undefined,targetId:r.target_id||undefined,timestamp:r.created_at,metadata:r.metadata||undefined});
-export async function loadAuditLogs(){const {data,error}=await supabase.from('audit_logs').select('*').order('created_at',{ascending:false}).limit(200);if(error)throw error;return (data||[]).map(map)}
-export async function writeAudit(userId:string,userEmail:string,action:string,targetType?:string,targetId?:string,metadata?:Record<string,unknown>){const {error}=await supabase.from('audit_logs').insert({user_id:userId,user_email:userEmail,action,target_type:targetType||null,target_id:targetId||null,metadata:metadata||{}});if(error)throw error}

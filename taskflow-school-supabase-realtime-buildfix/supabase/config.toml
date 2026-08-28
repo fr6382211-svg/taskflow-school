@@ -1,4 +1,0 @@
-project_id = "taskflow-school"
-
-[functions.admin-users]
-verify_jwt = true
