@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+:root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color-scheme: light; }
+* { box-sizing: border-box; }
+html, body, #root { min-height: 100%; }
+body { margin:0; background:#f6f8fc; color:#0f172a; }
+button, input, select, textarea { font: inherit; }
+button { cursor:pointer; }
+::selection { background:#bfdbfe; color:#172554; }
+.app-shell { min-height:100vh; }
+.glass { background:rgba(255,255,255,.82); backdrop-filter:blur(14px); }
+.scrollbar-hide::-webkit-scrollbar { display:none; }
+.scrollbar-hide { -ms-overflow-style:none; scrollbar-width:none; }
+.focus-ring:focus-visible { outline:3px solid rgba(59,130,246,.28); outline-offset:2px; }
+.fade-up { animation: fade-up .28s ease-out both; }
+@keyframes fade-up { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
+.pulse-soft { animation:pulse-soft 1.8s infinite; }
+@keyframes pulse-soft {0%,100%{opacity:1}50%{opacity:.55}}
+.input { width:100%; min-height:42px; border:1px solid #e2e8f0; border-radius:12px; background:#fff; padding:0 12px; color:#0f172a; font-size:14px; outline:none; transition:box-shadow .15s,border-color .15s,background .15s; }
+.input::placeholder { color:#94a3b8; }
+.input:focus { border-color:#93c5fd; box-shadow:0 0 0 4px rgba(59,130,246,.12); }
+.input:disabled { color:#94a3b8; cursor:not-allowed; }
+.label { display:block; margin-bottom:6px; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:#64748b; }
+html.dark body { background:#0b1220; color:#e2e8f0; }
+html.dark .bg-white { background-color:#111827 !important; }
+html.dark .bg-slate-50 { background-color:#0f172a !important; }
+html.dark .bg-slate-100 { background-color:#1e293b !important; }
+html.dark .border-slate-200, html.dark .border-slate-100 { border-color:#334155 !important; }
+html.dark .text-slate-950, html.dark .text-slate-900, html.dark .text-slate-800 { color:#f8fafc !important; }
+html.dark .text-slate-700, html.dark .text-slate-600 { color:#cbd5e1 !important; }
+html.dark .text-slate-500, html.dark .text-slate-400 { color:#94a3b8 !important; }
+html.dark .hover\\:bg-slate-50:hover { background-color:#1e293b !important; }
+html.dark .input { background:#0f172a; color:#f8fafc; border-color:#334155; }
+.compact-mode .p-5 { padding:.9rem !important; }
+.compact-mode .p-4 { padding:.75rem !important; }
