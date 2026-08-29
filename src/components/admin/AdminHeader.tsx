@@ -1,0 +1,1 @@
+export default function AdminHeader({title,description}:{title:string;description:string}){return <div><div className="text-xs font-bold uppercase tracking-[.2em] text-blue-600">Control Center</div><h1 className="mt-1 text-2xl font-extrabold tracking-tight">{title}</h1><p className="mt-1 text-sm text-slate-500">{description}</p></div>}
