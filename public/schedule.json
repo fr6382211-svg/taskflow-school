@@ -1,0 +1,277 @@
+{
+  "Senin": [
+    {
+      "start": "00:00",
+      "sub": "Di Luar Jam Sekolah"
+    },
+    {
+      "start": "07:00",
+      "sub": "Upacara Bendera",
+      "countdown": true
+    },
+    {
+      "start": "07:45",
+      "sub": "Bahasa Inggris"
+    },
+    {
+      "start": "10:00",
+      "sub": "Istirahat",
+      "countdown": true
+    },
+    {
+      "start": "10:15",
+      "sub": "Matematika"
+    },
+    {
+      "start": "11:45",
+      "sub": "Istirahat",
+      "countdown": true
+    },
+    {
+      "start": "12:30",
+      "sub": "Bahasa Indonesia"
+    },
+    {
+      "start": "13:50",
+      "sub": "Bahasa Jawa"
+    },
+    {
+      "start": "15:10",
+      "sub": "Istirahat",
+      "countdown": true
+    },
+    {
+      "start": "15:45",
+      "sub": "Bimbel TKA"
+    },
+    {
+      "start": "16:45",
+      "sub": "Pulang",
+      "countdown": true
+    }
+  ],
+  "Selasa": [
+    {
+      "start": "00:00",
+      "sub": "Di Luar Jam Sekolah"
+    },
+    {
+      "start": "07:00",
+      "sub": "Pendidikan Agama Islam"
+    },
+    {
+      "start": "09:15",
+      "sub": "Bahasa Inggris Tingkat Lanjut"
+    },
+    {
+      "start": "10:00",
+      "sub": "Istirahat",
+      "countdown": true
+    },
+    {
+      "start": "10:15",
+      "sub": "Bahasa Inggris Tingkat Lanjut"
+    },
+    {
+      "start": "11:00",
+      "sub": "Bimbingan Konseling"
+    },
+    {
+      "start": "11:45",
+      "sub": "Istirahat",
+      "countdown": true
+    },
+    {
+      "start": "12:30",
+      "sub": "Matematika Tingkat Lanjut"
+    },
+    {
+      "start": "13:50",
+      "sub": "Seni Budaya"
+    },
+    {
+      "start": "15:10",
+      "sub": "Istirahat",
+      "countdown": true
+    },
+    {
+      "start": "15:45",
+      "sub": "Bimbel TKA"
+    },
+    {
+      "start": "16:45",
+      "sub": "Pulang",
+      "countdown": true
+    }
+  ],
+  "Rabu": [
+    {
+      "start": "00:00",
+      "sub": "Di Luar Jam Sekolah"
+    },
+    {
+      "start": "07:00",
+      "sub": "Penjaskes"
+    },
+    {
+      "start": "09:15",
+      "sub": "Informatika"
+    },
+    {
+      "start": "10:00",
+      "sub": "Istirahat",
+      "countdown": true
+    },
+    {
+      "start": "10:15",
+      "sub": "Informatika"
+    },
+    {
+      "start": "11:45",
+      "sub": "Istirahat",
+      "countdown": true
+    },
+    {
+      "start": "12:30",
+      "sub": "Matematika"
+    },
+    {
+      "start": "13:50",
+      "sub": "Prakarya"
+    },
+    {
+      "start": "15:10",
+      "sub": "Istirahat",
+      "countdown": true
+    },
+    {
+      "start": "15:45",
+      "sub": "Bimbel TKA"
+    },
+    {
+      "start": "16:45",
+      "sub": "Pulang",
+      "countdown": true
+    }
+  ],
+  "Kamis": [
+    {
+      "start": "00:00",
+      "sub": "Di Luar Jam Sekolah"
+    },
+    {
+      "start": "07:00",
+      "sub": "Bahasa Inggris Tingkat Lanjut"
+    },
+    {
+      "start": "09:15",
+      "sub": "Sejarah"
+    },
+    {
+      "start": "10:00",
+      "sub": "Istirahat",
+      "countdown": true
+    },
+    {
+      "start": "10:15",
+      "sub": "Sejarah"
+    },
+    {
+      "start": "11:00",
+      "sub": "Matematika Tingkat Lanjut"
+    },
+    {
+      "start": "11:45",
+      "sub": "Istirahat",
+      "countdown": true
+    },
+    {
+      "start": "12:30",
+      "sub": "Matematika Tingkat Lanjut"
+    },
+    {
+      "start": "13:50",
+      "sub": "Fisika"
+    },
+    {
+      "start": "15:10",
+      "sub": "Istirahat",
+      "countdown": true
+    },
+    {
+      "start": "15:45",
+      "sub": "Bimbel TKA"
+    },
+    {
+      "start": "16:45",
+      "sub": "Pulang",
+      "countdown": true
+    }
+  ],
+  "Jumat": [
+    {
+      "start": "00:00",
+      "sub": "Di Luar Jam Sekolah"
+    },
+    {
+      "start": "07:00",
+      "sub": "PPKN"
+    },
+    {
+      "start": "08:30",
+      "sub": "Bahasa Indonesia"
+    },
+    {
+      "start": "09:15",
+      "sub": "Istirahat",
+      "countdown": true
+    },
+    {
+      "start": "09:30",
+      "sub": "Bahasa Indonesia"
+    },
+    {
+      "start": "10:10",
+      "sub": "Fisika"
+    },
+    {
+      "start": "11:30",
+      "sub": "Istirahat",
+      "countdown": true
+    },
+    {
+      "start": "13:00",
+      "sub": "Fisika"
+    },
+    {
+      "start": "13:40",
+      "sub": "Informatika"
+    },
+    {
+      "start": "15:10",
+      "sub": "Istirahat",
+      "countdown": true
+    },
+    {
+      "start": "15:45",
+      "sub": "Bimbel TKA"
+    },
+    {
+      "start": "16:45",
+      "sub": "Pulang",
+      "countdown": true
+    }
+  ],
+  "Sabtu": [
+    {
+      "start": "00:00",
+      "sub": "Libur / Akhir Pekan"
+    }
+  ],
+  "Minggu": [
+    {
+      "start": "00:00",
+      "sub": "Libur / Akhir Pekan"
+    }
+  ]
+}

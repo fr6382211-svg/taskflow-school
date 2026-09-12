@@ -1,0 +1,418 @@
+{
+    "metadata": {
+        "kelas": "12B",
+        "periode": "07 September 2026 - 04 Oktober 2026",
+        "catatan_penting": "INTENSIF TKA DIMULAI TGL 14 SEPTEMBER"
+    },
+    "data_jadwal": [
+        {
+            "minggu_ke": 1,
+            "hari": "Senin",
+            "tanggal": "07 September 2026",
+            "status": "Libur",
+            "kegiatan": []
+        },
+        {
+            "minggu_ke": 1,
+            "hari": "Selasa",
+            "tanggal": "08 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "16.30",
+                    "kode_mata_pelajaran": "KIM",
+                    "nama_mata_pelajaran": "Kimia",
+                    "jenis_kegiatan": "Reguler"
+                },
+                {
+                    "waktu": "18.30",
+                    "kode_mata_pelajaran": "INT TKA SOS",
+                    "nama_mata_pelajaran": "Intensif TKA Sosiologi",
+                    "jenis_kegiatan": "Intensif TKA"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 1,
+            "hari": "Rabu",
+            "tanggal": "09 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "16.30",
+                    "kode_mata_pelajaran": "MAT",
+                    "nama_mata_pelajaran": "Matematika",
+                    "jenis_kegiatan": "Reguler"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 1,
+            "hari": "Kamis",
+            "tanggal": "10 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "16.30",
+                    "kode_mata_pelajaran": "INT TKA FIS",
+                    "nama_mata_pelajaran": "Intensif TKA Fisika",
+                    "jenis_kegiatan": "Intensif TKA"
+                },
+                {
+                    "waktu": "18.30",
+                    "kode_mata_pelajaran": "GEO",
+                    "nama_mata_pelajaran": "Geografi",
+                    "jenis_kegiatan": "Reguler"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 1,
+            "hari": "Jumat",
+            "tanggal": "11 September 2026",
+            "status": "Libur",
+            "kegiatan": []
+        },
+        {
+            "minggu_ke": 1,
+            "hari": "Sabtu",
+            "tanggal": "12 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "Fleksibel/Full",
+                    "kode_mata_pelajaran": "TO NAS TKA",
+                    "nama_mata_pelajaran": "Try Out Nasional TKA",
+                    "jenis_kegiatan": "Try Out"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 1,
+            "hari": "Minggu",
+            "tanggal": "13 September 2026",
+            "status": "Libur",
+            "kegiatan": []
+        },
+        {
+            "minggu_ke": 2,
+            "hari": "Senin",
+            "tanggal": "14 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "18.30",
+                    "kode_mata_pelajaran": "INT TKA EKO",
+                    "nama_mata_pelajaran": "Intensif TKA Ekonomi",
+                    "jenis_kegiatan": "Intensif TKA"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 2,
+            "hari": "Selasa",
+            "tanggal": "15 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "16.30",
+                    "kode_mata_pelajaran": "INT TKA BIO",
+                    "nama_mata_pelajaran": "Intensif TKA Biologi",
+                    "jenis_kegiatan": "Intensif TKA"
+                },
+                {
+                    "waktu": "18.30",
+                    "kode_mata_pelajaran": "INT TKA SOS",
+                    "nama_mata_pelajaran": "Intensif TKA Sosiologi",
+                    "jenis_kegiatan": "Intensif TKA"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 2,
+            "hari": "Rabu",
+            "tanggal": "16 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "18.30",
+                    "kode_mata_pelajaran": "INT TKA BIN",
+                    "nama_mata_pelajaran": "Intensif TKA Bahasa Indonesia",
+                    "jenis_kegiatan": "Intensif TKA"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 2,
+            "hari": "Kamis",
+            "tanggal": "17 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "16.30",
+                    "kode_mata_pelajaran": "INT TKA MAT L",
+                    "nama_mata_pelajaran": "Intensif TKA Matematika Lanjut",
+                    "jenis_kegiatan": "Intensif TKA"
+                },
+                {
+                    "waktu": "18.30",
+                    "kode_mata_pelajaran": "INT TKA BIG L",
+                    "nama_mata_pelajaran": "Intensif TKA Bahasa Inggris Lanjut",
+                    "jenis_kegiatan": "Intensif TKA"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 2,
+            "hari": "Jumat",
+            "tanggal": "18 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "16.30",
+                    "kode_mata_pelajaran": "INT TKA GEO",
+                    "nama_mata_pelajaran": "Intensif TKA Geografi",
+                    "jenis_kegiatan": "Intensif TKA"
+                },
+                {
+                    "waktu": "18.30",
+                    "kode_mata_pelajaran": "INT TKA KIM",
+                    "nama_mata_pelajaran": "Intensif TKA Kimia",
+                    "jenis_kegiatan": "Intensif TKA"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 2,
+            "hari": "Sabtu",
+            "tanggal": "19 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "Fleksibel/Full",
+                    "kode_mata_pelajaran": "TO NAS SNBT",
+                    "nama_mata_pelajaran": "Try Out Nasional SNBT",
+                    "jenis_kegiatan": "Try Out"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 2,
+            "hari": "Minggu",
+            "tanggal": "20 September 2026",
+            "status": "Libur",
+            "kegiatan": []
+        },
+        {
+            "minggu_ke": 3,
+            "hari": "Senin",
+            "tanggal": "21 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "16.30",
+                    "kode_mata_pelajaran": "INT TKA EKO",
+                    "nama_mata_pelajaran": "Intensif TKA Ekonomi",
+                    "jenis_kegiatan": "Intensif TKA"
+                },
+                {
+                    "waktu": "18.30",
+                    "kode_mata_pelajaran": "INT TKA BIO",
+                    "nama_mata_pelajaran": "Intensif TKA Biologi",
+                    "jenis_kegiatan": "Intensif TKA"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 3,
+            "hari": "Selasa",
+            "tanggal": "22 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "16.30",
+                    "kode_mata_pelajaran": "INT TKA KIM",
+                    "nama_mata_pelajaran": "Intensif TKA Kimia",
+                    "jenis_kegiatan": "Intensif TKA"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 3,
+            "hari": "Rabu",
+            "tanggal": "23 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "16.30",
+                    "kode_mata_pelajaran": "INT TKA GEO",
+                    "nama_mata_pelajaran": "Intensif TKA Geografi",
+                    "jenis_kegiatan": "Intensif TKA"
+                },
+                {
+                    "waktu": "18.30",
+                    "kode_mata_pelajaran": "INT TKA MAT",
+                    "nama_mata_pelajaran": "Intensif TKA Matematika",
+                    "jenis_kegiatan": "Intensif TKA"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 3,
+            "hari": "Kamis",
+            "tanggal": "24 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "16.30",
+                    "kode_mata_pelajaran": "INT TKA FIS",
+                    "nama_mata_pelajaran": "Intensif TKA Fisika",
+                    "jenis_kegiatan": "Intensif TKA"
+                },
+                {
+                    "waktu": "18.30",
+                    "kode_mata_pelajaran": "INT TKA BIG L",
+                    "nama_mata_pelajaran": "Intensif TKA Bahasa Inggris Lanjut",
+                    "jenis_kegiatan": "Intensif TKA"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 3,
+            "hari": "Jumat",
+            "tanggal": "25 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "18.30",
+                    "kode_mata_pelajaran": "INT TKA BIG",
+                    "nama_mata_pelajaran": "Intensif TKA Bahasa Inggris",
+                    "jenis_kegiatan": "Intensif TKA"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 3,
+            "hari": "Sabtu",
+            "tanggal": "26 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "Fleksibel/Full",
+                    "kode_mata_pelajaran": "TO NAS TKA",
+                    "nama_mata_pelajaran": "Try Out Nasional TKA",
+                    "jenis_kegiatan": "Try Out"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 3,
+            "hari": "Minggu",
+            "tanggal": "27 September 2026",
+            "status": "Libur",
+            "kegiatan": []
+        },
+        {
+            "minggu_ke": 4,
+            "hari": "Senin",
+            "tanggal": "28 September 2026",
+            "status": "Libur",
+            "kegiatan": []
+        },
+        {
+            "minggu_ke": 4,
+            "hari": "Selasa",
+            "tanggal": "29 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "16.30",
+                    "kode_mata_pelajaran": "INT TKA KIM",
+                    "nama_mata_pelajaran": "Intensif TKA Kimia",
+                    "jenis_kegiatan": "Intensif TKA"
+                },
+                {
+                    "waktu": "18.30",
+                    "kode_mata_pelajaran": "INT TKA EKO",
+                    "nama_mata_pelajaran": "Intensif TKA Ekonomi",
+                    "jenis_kegiatan": "Intensif TKA"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 4,
+            "hari": "Rabu",
+            "tanggal": "30 September 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "18.30",
+                    "kode_mata_pelajaran": "INT TKA SOS",
+                    "nama_mata_pelajaran": "Intensif TKA Sosiologi",
+                    "jenis_kegiatan": "Intensif TKA"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 4,
+            "hari": "Kamis",
+            "tanggal": "01 Oktober 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "16.30",
+                    "kode_mata_pelajaran": "INT TKA MAT",
+                    "nama_mata_pelajaran": "Intensif TKA Matematika",
+                    "jenis_kegiatan": "Intensif TKA"
+                },
+                {
+                    "waktu": "18.30",
+                    "kode_mata_pelajaran": "INT TKA BIG",
+                    "nama_mata_pelajaran": "Intensif TKA Bahasa Inggris",
+                    "jenis_kegiatan": "Intensif TKA"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 4,
+            "hari": "Jumat",
+            "tanggal": "02 Oktober 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "16.30",
+                    "kode_mata_pelajaran": "INT TKA MAT L",
+                    "nama_mata_pelajaran": "Intensif TKA Matematika Lanjut",
+                    "jenis_kegiatan": "Intensif TKA"
+                },
+                {
+                    "waktu": "18.30",
+                    "kode_mata_pelajaran": "INT TKA BIO",
+                    "nama_mata_pelajaran": "Intensif TKA Biologi",
+                    "jenis_kegiatan": "Intensif TKA"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 4,
+            "hari": "Sabtu",
+            "tanggal": "03 Oktober 2026",
+            "status": "Ada Kegiatan",
+            "kegiatan": [
+                {
+                    "waktu": "12.00",
+                    "kode_mata_pelajaran": "INT TKA FIS",
+                    "nama_mata_pelajaran": "Intensif TKA Fisika",
+                    "jenis_kegiatan": "Intensif TKA"
+                }
+            ]
+        },
+        {
+            "minggu_ke": 4,
+            "hari": "Minggu",
+            "tanggal": "04 Oktober 2026",
+            "status": "Libur",
+            "kegiatan": []
+        }
+    ]
+}

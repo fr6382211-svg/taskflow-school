@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@schoolhub/ui": [
+        "src/vendor/schoolhub-ui/index.ts"
+      ],
+      "@boredkevin/ui": [
+        "src/vendor/schoolhub-ui/index.ts"
+      ],
+      "@shui/*": [
+        "src/vendor/schoolhub-ui/*"
+      ]
+    }
+  },
+  "include": [
+    "src"
+  ]
+}

@@ -1,0 +1,422 @@
+/*
+ * Fathur School Hub — Editorial Light Theme
+ * Visual direction adapted from the supplied General Intelligence Company reference.
+ * Functional structure is intentionally preserved: sidebar, header, dashboard and all routes remain.
+ */
+
+.editorial-theme {
+  --ed-parchment: #fefffc;
+  --ed-paper: #ffffff;
+  --ed-linen: #f9faf7;
+  --ed-ink: #171717;
+  --ed-graphite: #2c2c2c;
+  --ed-charcoal: #444141;
+  --ed-ash: #646464;
+  --ed-fog: #b4b8b4;
+  --ed-mist: #dee2de;
+  --ed-twilight: #282834;
+  --ed-dusk: #1f1f29;
+  --ed-blue: #41a1cf;
+  --ed-cerulean: #0081c0;
+  --ed-serif: Georgia, 'Times New Roman', ui-serif, serif;
+  --ed-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--ed-graphite);
+}
+
+html:not(.dark) .editorial-theme,
+html:not(.dark) .editorial-theme body {
+  font-family: var(--ed-sans);
+}
+
+html:not(.dark) body {
+  background: var(--ed-parchment) !important;
+  color: var(--ed-graphite) !important;
+}
+
+html:not(.dark) .editorial-theme {
+  min-height: 100dvh;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(65,161,207,.055), transparent 28%),
+    radial-gradient(circle at 88% 3%, rgba(0,129,192,.035), transparent 24%),
+    var(--ed-parchment) !important;
+}
+
+html:not(.dark) .editorial-theme::before {
+  display: none !important;
+}
+
+/* Keep the existing sidebar/navigation layout, but translate it into paper/ink language. */
+html:not(.dark) .editorial-theme .stitch-sidebar {
+  width: 248px !important;
+  background: rgba(249,250,247,.96) !important;
+  border-right: 1px solid var(--ed-mist) !important;
+  box-shadow: 1px 0 0 rgba(40,40,52,.02) !important;
+  color: var(--ed-charcoal) !important;
+}
+
+html:not(.dark) .editorial-theme .stitch-sidebar__brand {
+  height: 68px !important;
+  padding-inline: 18px !important;
+  border-bottom: 1px solid var(--ed-mist) !important;
+}
+
+html:not(.dark) .editorial-theme .stitch-sidebar__brand img {
+  height: 36px !important;
+  width: 36px !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--ed-mist) !important;
+  background: var(--ed-paper) !important;
+}
+
+html:not(.dark) .editorial-theme .stitch-sidebar__brand .text-white,
+html:not(.dark) .editorial-theme .stitch-sidebar .text-white,
+html:not(.dark) .editorial-theme .stitch-sidebar .text-slate-200 {
+  color: var(--ed-graphite) !important;
+}
+
+html:not(.dark) .editorial-theme .stitch-sidebar a {
+  margin-block: 2px;
+  border-radius: 8px !important;
+  border-left: 2px solid transparent !important;
+  color: var(--ed-charcoal) !important;
+  background: transparent !important;
+}
+
+html:not(.dark) .editorial-theme .stitch-sidebar a:hover {
+  color: var(--ed-ink) !important;
+  background: #f1f3ef !important;
+}
+
+html:not(.dark) .editorial-theme .stitch-sidebar a[aria-current='page'] {
+  color: var(--ed-graphite) !important;
+  background: var(--ed-paper) !important;
+  border-left-color: var(--ed-blue) !important;
+  box-shadow: 0 1px 4px rgba(23,23,23,.035) !important;
+}
+
+html:not(.dark) .editorial-theme .stitch-sidebar__session {
+  background: var(--ed-paper) !important;
+  border: 1px solid var(--ed-mist) !important;
+  border-radius: 12px !important;
+  color: var(--ed-charcoal) !important;
+}
+
+/* Workspace switcher */
+html:not(.dark) .editorial-theme .stitch-sidebar .bg-indigo-500\/15 {
+  background: rgba(65,161,207,.08) !important;
+}
+
+html:not(.dark) .editorial-theme .stitch-sidebar .text-indigo-200 {
+  color: var(--ed-graphite) !important;
+}
+
+/* Header: quiet frosted pill rather than a heavy dashboard chrome. */
+html:not(.dark) .editorial-theme > .min-w-0.flex-1 > header {
+  margin: 12px 16px 0;
+  border: 1px solid rgba(222,226,222,.92) !important;
+  border-radius: 16px !important;
+  background: rgba(255,255,255,.82) !important;
+  box-shadow: 0 6px 18px rgba(23,23,23,.035) !important;
+  backdrop-filter: blur(14px);
+}
+
+html:not(.dark) .editorial-theme > .min-w-0.flex-1 > header .text-slate-400 {
+  color: var(--ed-ash) !important;
+}
+
+html:not(.dark) .editorial-theme > .min-w-0.flex-1 > header .text-slate-900,
+html:not(.dark) .editorial-theme > .min-w-0.flex-1 > header .text-slate-800,
+html:not(.dark) .editorial-theme > .min-w-0.flex-1 > header .text-slate-700 {
+  color: var(--ed-graphite) !important;
+}
+
+html:not(.dark) .editorial-theme > .min-w-0.flex-1 > header button {
+  border-color: var(--ed-mist) !important;
+  box-shadow: none !important;
+  background: rgba(255,255,255,.72) !important;
+}
+
+html:not(.dark) .editorial-theme > .min-w-0.flex-1 > header button:hover {
+  background: var(--ed-linen) !important;
+}
+
+/* Search/input surfaces */
+html:not(.dark) .editorial-theme .input,
+html:not(.dark) .editorial-theme input.input,
+html:not(.dark) .editorial-theme textarea.input,
+html:not(.dark) .editorial-theme select.input {
+  background: var(--ed-linen) !important;
+  color: var(--ed-charcoal) !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--ed-charcoal) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+html:not(.dark) .editorial-theme .input:focus {
+  border-bottom-color: var(--ed-blue) !important;
+  box-shadow: 0 4px 0 -3px var(--ed-blue) !important;
+}
+
+/* Cards / surfaces */
+html:not(.dark) .editorial-theme .hub-surface,
+html:not(.dark) .editorial-theme .card-premium,
+html:not(.dark) .editorial-theme .hub-kpi,
+html:not(.dark) .editorial-theme .hub-task,
+html:not(.dark) .editorial-theme .hub-event,
+html:not(.dark) .editorial-theme .hub-side-stat {
+  background: var(--ed-paper) !important;
+  color: var(--ed-charcoal) !important;
+  border: 1px solid var(--ed-mist) !important;
+  box-shadow: 0 1px 1px rgba(23,23,23,.055), 0 4px 10px rgba(23,23,23,.028) !important;
+  backdrop-filter: none !important;
+}
+
+html:not(.dark) .editorial-theme .hub-surface:hover,
+html:not(.dark) .editorial-theme .hub-task:hover,
+html:not(.dark) .editorial-theme .hub-event:hover,
+html:not(.dark) .editorial-theme .hub-side-stat:hover,
+html:not(.dark) .editorial-theme .card-premium:hover {
+  border-color: #cfd6cf !important;
+  box-shadow: 0 2px 2px rgba(23,23,23,.06), 0 7px 16px rgba(23,23,23,.035) !important;
+}
+
+/* Convert dark-first text utilities into the editorial ink scale in light mode. */
+html:not(.dark) .editorial-theme .text-white { color: var(--ed-graphite) !important; }
+html:not(.dark) .editorial-theme .text-slate-950,
+html:not(.dark) .editorial-theme .text-slate-900,
+html:not(.dark) .editorial-theme .text-slate-800 { color: var(--ed-graphite) !important; }
+html:not(.dark) .editorial-theme .text-slate-700,
+html:not(.dark) .editorial-theme .text-slate-600 { color: var(--ed-charcoal) !important; }
+html:not(.dark) .editorial-theme .text-slate-500,
+html:not(.dark) .editorial-theme .text-slate-400 { color: var(--ed-ash) !important; }
+
+/* Don't let dark/white text normalization ruin button contrast. */
+html:not(.dark) .editorial-theme .editorial-button--dark,
+html:not(.dark) .editorial-theme .editorial-button--dark .text-white,
+html:not(.dark) .editorial-theme .editorial-button--blue-fill,
+html:not(.dark) .editorial-theme .editorial-button--blue-fill .text-white {
+  color: #fff !important;
+}
+
+/* Editorial headline */
+html:not(.dark) .editorial-theme h1,
+html:not(.dark) .editorial-theme h2,
+html:not(.dark) .editorial-theme h3,
+html:not(.dark) .editorial-theme .editorial-heading {
+  font-family: var(--ed-serif) !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.025em !important;
+  color: var(--ed-graphite) !important;
+}
+
+html:not(.dark) .editorial-theme h1 {
+  line-height: 1.08 !important;
+}
+
+html:not(.dark) .editorial-theme .hub-dashboard > section:first-child {
+  position: relative;
+  overflow: hidden;
+  min-height: 230px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.98), rgba(249,250,247,.93)),
+    var(--ed-paper) !important;
+}
+
+html:not(.dark) .editorial-theme .hub-dashboard > section:first-child::before {
+  content: '';
+  position: absolute;
+  right: -110px;
+  top: -90px;
+  width: 340px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(65,161,207,.13), rgba(65,161,207,0) 68%);
+  pointer-events: none;
+}
+
+html:not(.dark) .editorial-theme .hub-dashboard > section:first-child::after {
+  content: '';
+  position: absolute;
+  right: 26px;
+  bottom: 18px;
+  width: 120px;
+  height: 72px;
+  opacity: .35;
+  background:
+    radial-gradient(circle at 10px 16px, #cfd6cf 1px, transparent 1.2px),
+    radial-gradient(circle at 42px 30px, #cfd6cf 1px, transparent 1.2px),
+    radial-gradient(circle at 76px 14px, #cfd6cf 1px, transparent 1.2px),
+    radial-gradient(circle at 95px 42px, #cfd6cf 1px, transparent 1.2px);
+  pointer-events: none;
+}
+
+/* Chips become understated editorial labels. */
+html:not(.dark) .editorial-theme .hub-chip {
+  background: transparent !important;
+  border: 1px solid var(--ed-mist) !important;
+  color: var(--ed-ash) !important;
+  border-radius: 8px !important;
+  font-family: var(--ed-sans) !important;
+  letter-spacing: -.01em !important;
+}
+
+/* Buttons: outlined blue identity, dark fill only for high emphasis. */
+html:not(.dark) .editorial-theme .editorial-button {
+  border-radius: 8px !important;
+  font-family: var(--ed-sans) !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: background-color .18s ease, border-color .18s ease, color .18s ease, transform .18s ease !important;
+}
+
+html:not(.dark) .editorial-theme .editorial-button:hover {
+  transform: translateY(-1px) !important;
+}
+
+html:not(.dark) .editorial-theme .editorial-button--outline {
+  background: transparent !important;
+  border: 1px solid var(--ed-blue) !important;
+  color: var(--ed-blue) !important;
+}
+
+html:not(.dark) .editorial-theme .editorial-button--outline:hover {
+  background: rgba(65,161,207,.055) !important;
+}
+
+html:not(.dark) .editorial-theme .editorial-button--dark {
+  background: var(--ed-dusk) !important;
+  border: 1px solid var(--ed-twilight) !important;
+  color: #fff !important;
+}
+
+html:not(.dark) .editorial-theme .editorial-button--ghost {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: var(--ed-charcoal) !important;
+}
+
+html:not(.dark) .editorial-theme .editorial-button--danger {
+  background: transparent !important;
+  border: 1px solid #b66a6a !important;
+  color: #9a4848 !important;
+}
+
+/* Dedicated atmospheric highlight */
+html:not(.dark) .editorial-theme .editorial-atmosphere {
+  background: linear-gradient(135deg, #0081c0, #2a93be 65%, #4ea9ca) !important;
+  color: #fff !important;
+  border: 1px solid rgba(0,91,132,.18) !important;
+}
+
+html:not(.dark) .editorial-theme .editorial-atmosphere .text-white,
+html:not(.dark) .editorial-theme .editorial-atmosphere h1,
+html:not(.dark) .editorial-theme .editorial-atmosphere h2,
+html:not(.dark) .editorial-theme .editorial-atmosphere h3 {
+  color: #fff !important;
+}
+
+/* Generic rounded utility surfaces become calmer, but retain existing geometry. */
+html:not(.dark) .editorial-theme .rounded-2xl.border,
+html:not(.dark) .editorial-theme .rounded-xl.border {
+  border-color: var(--ed-mist) !important;
+  box-shadow: 0 1px 2px rgba(23,23,23,.025) !important;
+}
+
+/* Focus mode: retain functionality, move the chrome into the same editorial system. */
+html:not(.dark) .editorial-theme .timebox-shell,
+html:not(.dark) .editorial-theme .timebox-shell section,
+html:not(.dark) .editorial-theme .timebox-shell .timebox-clock-card,
+html:not(.dark) .editorial-theme .timebox-shell .liquid-glass-card,
+html:not(.dark) .editorial-theme .timebox-shell .liquid-glass-panel {
+  background: var(--ed-paper) !important;
+  border-color: var(--ed-mist) !important;
+  color: var(--ed-charcoal) !important;
+  box-shadow: 0 1px 2px rgba(23,23,23,.035) !important;
+}
+
+html:not(.dark) .editorial-theme .timebox-shell .timebox-clock {
+  color: var(--ed-graphite) !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
+}
+
+/* Status/animation language: restrained rather than neon. */
+html:not(.dark) .editorial-theme .status-live {
+  animation: editorial-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes editorial-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(65,161,207,0); }
+  50% { box-shadow: 0 0 0 5px rgba(65,161,207,.08); }
+}
+
+html:not(.dark) .editorial-theme .fade-up,
+html:not(.dark) .editorial-theme .page-transition,
+html:not(.dark) .editorial-theme .content-rise {
+  animation-duration: .42s !important;
+  animation-timing-function: cubic-bezier(.2,.8,.2,1) !important;
+}
+
+html:not(.dark) .editorial-theme .live-statusbar {
+  background: rgba(255,255,255,.90) !important;
+  border-top-color: var(--ed-mist) !important;
+  box-shadow: 0 -4px 14px rgba(23,23,23,.025) !important;
+}
+
+html:not(.dark) .editorial-theme .live-statusbar__track {
+  background: #edf0ed !important;
+}
+
+html:not(.dark) .editorial-theme .live-statusbar__fill {
+  background: linear-gradient(90deg, #7dbbd6, #41a1cf, #7dbbd6) !important;
+  box-shadow: none !important;
+  animation-duration: 5s !important;
+}
+
+/* Mobile drawer retains function but follows the editorial paper language. */
+html:not(.dark) .editorial-theme .fixed.inset-0.z-\[80\] > aside {
+  background: var(--ed-paper) !important;
+  color: var(--ed-charcoal) !important;
+}
+
+/* Dark mode remains functional; only the light/editorial mode is changed. */
+html:not(.dark) .editorial-theme .border-white\/7,
+html:not(.dark) .editorial-theme .border-white\/10,
+html:not(.dark) .editorial-theme .border-white\/\[\.06\] {
+  border-color: var(--ed-mist) !important;
+}
+
+@media (max-width: 1023px) {
+  html:not(.dark) .editorial-theme > .min-w-0.flex-1 > header {
+    margin: 8px 10px 0;
+    border-radius: 14px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html:not(.dark) .editorial-theme > .min-w-0.flex-1 > header {
+    margin: 6px 8px 0;
+  }
+
+  html:not(.dark) .editorial-theme main {
+    padding-inline: 12px !important;
+  }
+
+  html:not(.dark) .editorial-theme .hub-dashboard > section:first-child {
+    min-height: 205px;
+  }
+
+  html:not(.dark) .editorial-theme h1 {
+    font-size: clamp(30px, 10vw, 42px) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:not(.dark) .editorial-theme .status-live,
+  html:not(.dark) .editorial-theme .fade-up,
+  html:not(.dark) .editorial-theme .page-transition,
+  html:not(.dark) .editorial-theme .content-rise {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,7 @@
+project_id = "taskflow-school"
+
+[functions.admin-users]
+verify_jwt = true
+
+[functions.daily-digest]
+verify_jwt = false
