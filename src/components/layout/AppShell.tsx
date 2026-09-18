@@ -38,7 +38,6 @@ import Sidebar from './Sidebar';
 import LiveStatusBar from './LiveStatusBar';
 import Watermark from './Watermark';
 
-
 type AppShellProps = {
   children: ReactNode;
 };
@@ -295,26 +294,26 @@ export default function AppShell({ children }: AppShellProps) {
   const pageTitle = pageTitleFromPath(location.pathname);
 
   return (
-    <div className="app-shell editorial-theme flex min-h-dvh bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <div className="tf-shell app-shell marginalia-theme flex min-h-dvh">
       <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} />
 
       <div className="min-w-0 flex-1">
-        <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/90">
+        <header className="tf-header sticky top-0 z-40 backdrop-blur-xl">
           <div className="flex min-h-16 items-center gap-2 px-3 sm:px-4 md:gap-3 md:px-6">
             <button
               type="button"
               onClick={() => setMobileOpen(true)}
-              className="rounded-xl p-2.5 text-slate-600 hover:bg-slate-100 lg:hidden dark:text-slate-200 dark:hover:bg-slate-800"
+              className="tf-icon-btn grid h-10 w-10 place-items-center lg:hidden"
               aria-label="Buka navigasi"
             >
               <Menu size={20} />
             </button>
 
             <div className="min-w-0 flex-1">
-              <div className="text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">
+              <div className="text-[10px] font-semibold uppercase tracking-[0.14em]" style={{ color: 'var(--tf-ink-muted)' }}>
                 Fathur School Hub
               </div>
-              <h1 className="truncate text-sm font-black text-slate-900 dark:text-white">
+              <h1 className="tf-display truncate text-base">
                 {pageTitle}
               </h1>
             </div>
@@ -322,11 +321,12 @@ export default function AppShell({ children }: AppShellProps) {
             <button
               type="button"
               onClick={() => setPaletteOpen(true)}
-              className="hidden min-w-[260px] items-center gap-3 rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-semibold text-slate-500 shadow-sm md:flex dark:border-slate-700 dark:bg-slate-900"
+              className="tf-btn-ghost hidden min-w-[260px] items-center gap-3 px-3 py-2.5 text-xs font-medium md:flex"
+              style={{ color: 'var(--tf-ink-muted)' }}
             >
               <Search size={15} />
               <span className="flex-1 text-left">Cari halaman atau fitur...</span>
-              <kbd className="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[10px] dark:bg-slate-800">
+              <kbd className="tf-kbd px-1.5 py-0.5 text-[10px]">
                 Ctrl K
               </kbd>
             </button>
@@ -334,7 +334,7 @@ export default function AppShell({ children }: AppShellProps) {
             <button
               type="button"
               onClick={() => void toggleTheme()}
-              className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 shadow-sm hover:-translate-y-0.5 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+              className="tf-icon-btn grid h-10 w-10 shrink-0 place-items-center"
               aria-label={darkMode ? 'Gunakan mode terang' : 'Gunakan mode gelap'}
             >
               {darkMode ? <Sun size={18} /> : <Moon size={18} />}
@@ -343,12 +343,12 @@ export default function AppShell({ children }: AppShellProps) {
             <button
               type="button"
               onClick={() => go('/notifications')}
-              className="relative grid h-10 w-10 shrink-0 place-items-center rounded-xl text-slate-600 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
+              className="tf-icon-btn relative grid h-10 w-10 shrink-0 place-items-center"
               aria-label="Notifikasi"
             >
               <Bell size={19} />
               {unreadCount > 0 && (
-                <span className="absolute right-1 top-1 grid h-4 min-w-4 place-items-center rounded-full bg-indigo-600 px-1 text-[9px] font-black text-white">
+                <span className="tf-badge-count absolute right-1 top-1 grid h-4 min-w-4 place-items-center px-1 text-[9px] font-bold">
                   {unreadCount > 9 ? '9+' : unreadCount}
                 </span>
               )}
@@ -358,11 +358,11 @@ export default function AppShell({ children }: AppShellProps) {
               <button
                 type="button"
                 onClick={() => setProfileOpen((open) => !open)}
-                className="flex h-10 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-1.5 pr-2.5 shadow-sm dark:border-slate-700 dark:bg-slate-900"
+                className="tf-btn-ghost flex h-10 items-center gap-2 px-1.5 pr-2.5"
                 aria-expanded={profileOpen}
                 aria-haspopup="menu"
               >
-                <span className="grid h-8 w-8 place-items-center overflow-hidden rounded-xl bg-indigo-600 text-xs font-black text-white">
+                <span className="tf-avatar grid h-8 w-8 place-items-center overflow-hidden text-xs font-bold">
                   {profile?.photoURL ? (
                     <img
                       src={profile.photoURL}
@@ -373,23 +373,27 @@ export default function AppShell({ children }: AppShellProps) {
                     profileInitials
                   )}
                 </span>
-                <span className="hidden max-w-32 truncate text-xs font-bold sm:block">
+                <span className="hidden max-w-32 truncate text-xs font-medium sm:block">
                   {profile?.name || 'Pengguna'}
                 </span>
               </button>
 
               {profileOpen && (
-                <div className="absolute right-0 top-12 z-50 w-60 rounded-2xl border border-slate-200 bg-white p-2 shadow-2xl dark:border-slate-700 dark:bg-slate-900">
-                  <div className="mb-1 rounded-xl bg-slate-50 p-3 dark:bg-slate-800">
-                    <div className="flex items-center gap-2 text-xs font-black">
+                <div className="tf-card absolute right-0 top-12 z-50 w-60 p-2">
+                  <div className="mb-1 rounded-[10px] p-3" style={{ background: 'var(--tf-sunken)' }}>
+                    <div className="flex items-center gap-2 text-xs font-semibold">
                       {showAdmin ? (
-                        <ShieldCheck size={14} className="text-violet-500" />
+                        <span className="tf-stamp">
+                          <ShieldCheck size={13} /> Admin
+                        </span>
                       ) : (
-                        <Sparkles size={14} className="text-indigo-500" />
+                        <>
+                          <Sparkles size={14} style={{ color: 'var(--tf-accent)' }} />
+                          Workspace siswa
+                        </>
                       )}
-                      {showAdmin ? 'Administrator' : 'Workspace siswa'}
                     </div>
-                    <div className="mt-1 truncate text-[11px] text-slate-500">
+                    <div className="mt-1 truncate text-[11px]" style={{ color: 'var(--tf-ink-muted)' }}>
                       {profile?.email || 'Email tidak tersedia'}
                     </div>
                   </div>
@@ -397,14 +401,14 @@ export default function AppShell({ children }: AppShellProps) {
                   <button
                     type="button"
                     onClick={() => go('/profile')}
-                    className="w-full rounded-xl px-3 py-2.5 text-left text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800"
+                    className="tf-nav-item w-full px-3 py-2.5 text-left text-sm font-medium"
                   >
                     Profil
                   </button>
                   <button
                     type="button"
                     onClick={() => go('/settings')}
-                    className="w-full rounded-xl px-3 py-2.5 text-left text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800"
+                    className="tf-nav-item w-full px-3 py-2.5 text-left text-sm font-medium"
                   >
                     Pengaturan
                   </button>
@@ -412,7 +416,7 @@ export default function AppShell({ children }: AppShellProps) {
                     <button
                       type="button"
                       onClick={() => go('/admin')}
-                      className="flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-left text-sm font-semibold text-violet-700 hover:bg-violet-50 dark:text-violet-300 dark:hover:bg-violet-950/30"
+                      className="tf-nav-item flex w-full items-center justify-between px-3 py-2.5 text-left text-sm font-medium"
                     >
                       <span>Admin Center</span>
                       <ChevronRight size={15} />
@@ -421,7 +425,7 @@ export default function AppShell({ children }: AppShellProps) {
                   <button
                     type="button"
                     onClick={() => void logout()}
-                    className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-left text-sm font-semibold text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/30"
+                    className="flex w-full items-center gap-2 rounded-[10px] px-3 py-2.5 text-left text-sm font-medium text-rose-600 hover:bg-rose-500/10"
                   >
                     <LogOut size={15} />
                     Keluar
@@ -432,7 +436,7 @@ export default function AppShell({ children }: AppShellProps) {
           </div>
         </header>
 
-        <main className="mx-auto w-full max-w-[1600px] min-w-0 overflow-x-clip px-3 py-4 pb-8 sm:px-5 md:py-6 lg:px-7">
+        <main className="mx-auto w-full max-w-[1600px] min-w-0 overflow-x-clip px-3 py-4 pb-24 sm:px-5 md:py-6 lg:px-7 lg:pb-8">
           {children}
         </main>
 
@@ -451,18 +455,18 @@ export default function AppShell({ children }: AppShellProps) {
             }
           }}
         >
-          <aside className="flex h-full w-[min(90vw,360px)] flex-col bg-white p-4 shadow-2xl dark:bg-slate-950">
+          <aside className="tf-shell flex h-full w-[min(90vw,360px)] flex-col p-4">
             <div className="mb-4 flex items-center justify-between">
               <div>
-                <div className="text-lg font-black tracking-tight">FATHUR</div>
-                <div className="text-[10px] font-bold tracking-[0.2em] text-slate-400">
+                <div className="tf-display text-lg">FATHUR</div>
+                <div className="text-[10px] font-semibold tracking-[0.18em]" style={{ color: 'var(--tf-ink-muted)' }}>
                   SCHOOL HUB
                 </div>
               </div>
               <button
                 type="button"
                 onClick={() => setMobileOpen(false)}
-                className="rounded-xl p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800"
+                className="tf-icon-btn rounded-[10px] p-2"
                 aria-label="Tutup menu"
               >
                 <X size={20} />
@@ -479,7 +483,7 @@ export default function AppShell({ children }: AppShellProps) {
                     <a
                       key={`${item.label}-${item.to}`}
                       href={item.to}
-                      className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left text-sm font-semibold text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-900"
+                      className="tf-nav-item flex w-full items-center gap-3 px-3 py-3 text-left text-sm font-medium"
                     >
                       <Icon size={18} />
                       <span>{item.label}</span>
@@ -493,10 +497,8 @@ export default function AppShell({ children }: AppShellProps) {
                     type="button"
                     onClick={() => go(item.to)}
                     className={cn(
-                      'flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left text-sm font-semibold transition',
-                      active
-                        ? 'bg-indigo-50 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-200'
-                        : 'text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-900',
+                      'tf-nav-item flex w-full items-center gap-3 px-3 py-3 text-left text-sm font-medium',
+                      active && 'is-active',
                     )}
                   >
                     <Icon size={18} />
@@ -507,7 +509,10 @@ export default function AppShell({ children }: AppShellProps) {
 
               {showAdmin && (
                 <>
-                  <div className="my-3 border-t border-slate-100 pt-3 text-[10px] font-black uppercase tracking-[0.18em] text-slate-400 dark:border-slate-800 dark:text-slate-600">
+                  <div
+                    className="my-3 pt-3 text-[10px] font-semibold uppercase tracking-[0.16em]"
+                    style={{ borderTop: '1px solid var(--tf-rule)', color: 'var(--tf-ink-muted)' }}
+                  >
                     Admin Center
                   </div>
                   {adminMenu.map((item) => {
@@ -519,10 +524,8 @@ export default function AppShell({ children }: AppShellProps) {
                         type="button"
                         onClick={() => go(item.to)}
                         className={cn(
-                          'flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left text-sm font-semibold transition',
-                          active
-                            ? 'bg-violet-50 text-violet-700 dark:bg-violet-950/35 dark:text-violet-200'
-                            : 'text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-900',
+                          'tf-nav-item flex w-full items-center gap-3 px-3 py-3 text-left text-sm font-medium',
+                          active && 'is-active',
                         )}
                       >
                         <Icon size={18} />
@@ -534,11 +537,11 @@ export default function AppShell({ children }: AppShellProps) {
               )}
             </nav>
 
-            <div className="mt-3 border-t border-slate-100 pt-3 dark:border-slate-800">
+            <div className="mt-3 pt-3" style={{ borderTop: '1px solid var(--tf-rule)' }}>
               <button
                 type="button"
                 onClick={() => void logout()}
-                className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left text-sm font-semibold text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/30"
+                className="flex w-full items-center gap-3 rounded-[10px] px-3 py-3 text-left text-sm font-medium text-rose-600 hover:bg-rose-500/10"
               >
                 <LogOut size={18} />
                 Keluar dari akun
@@ -557,20 +560,20 @@ export default function AppShell({ children }: AppShellProps) {
             }
           }}
         >
-          <div className="mx-auto mt-[8vh] w-full max-w-2xl overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl dark:border-slate-800 dark:bg-slate-950">
-            <div className="flex items-center gap-3 border-b border-slate-100 px-4 py-3 dark:border-slate-800">
-              <Search size={18} className="text-slate-400" />
+          <div className="tf-card mx-auto mt-[8vh] w-full max-w-2xl overflow-hidden" style={{ borderRadius: 20 }}>
+            <div className="flex items-center gap-3 px-4 py-3" style={{ borderBottom: '1px solid var(--tf-rule)' }}>
+              <Search size={18} style={{ color: 'var(--tf-ink-muted)' }} />
               <input
                 autoFocus
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
-                className="min-w-0 flex-1 bg-transparent text-sm font-semibold outline-none"
+                className="min-w-0 flex-1 bg-transparent text-sm font-medium outline-none"
                 placeholder="Cari halaman atau fitur..."
               />
               <button
                 type="button"
                 onClick={() => setPaletteOpen(false)}
-                className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+                className="tf-icon-btn rounded-[8px] p-1.5"
                 aria-label="Tutup pencarian"
               >
                 <X size={16} />
@@ -578,7 +581,7 @@ export default function AppShell({ children }: AppShellProps) {
             </div>
 
             <div className="max-h-[60vh] overflow-y-auto p-2">
-              {query.trim() && commandItems.length > 0 ? <div className="mb-2 border-b border-slate-100 pb-2 dark:border-slate-800">{commandItems.map((item,idx)=><button key={item.label} type="button" onClick={item.action} className={cn('flex w-full items-center rounded-2xl px-3 py-3 text-left text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-900', idx===paletteIndex?'bg-slate-50 dark:bg-slate-900':'')}><span className="flex-1">⌘ {item.label}</span></button>)}</div> : null}
+              {query.trim() && commandItems.length > 0 ? <div className="mb-2 pb-2" style={{ borderBottom: '1px solid var(--tf-rule)' }}>{commandItems.map((item,idx)=><button key={item.label} type="button" onClick={item.action} className={cn('tf-nav-item flex w-full items-center px-3 py-3 text-left text-sm font-medium', idx===paletteIndex && 'is-active')}><span className="flex-1">⌘ {item.label}</span></button>)}</div> : null}
               {filteredSearchItems.length > 0 ? (
                 filteredSearchItems.map((item) => {
                   const Icon = item.Icon;
@@ -587,9 +590,9 @@ export default function AppShell({ children }: AppShellProps) {
                       <a
                         key={`${item.label}-${item.to}`}
                         href={item.to}
-                        className="flex w-full items-center gap-3 rounded-2xl px-3 py-3 text-left text-sm font-semibold text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-900"
+                        className="tf-nav-item flex w-full items-center gap-3 px-3 py-3 text-left text-sm font-medium"
                       >
-                        <span className="grid h-9 w-9 place-items-center rounded-xl bg-slate-100 text-slate-500 dark:bg-slate-900 dark:text-slate-300">
+                        <span className="grid h-9 w-9 place-items-center rounded-[10px]" style={{ background: 'var(--tf-sunken)', color: 'var(--tf-ink-muted)' }}>
                           <Icon size={17} />
                         </span>
                         <span>{item.label}</span>
@@ -602,9 +605,9 @@ export default function AppShell({ children }: AppShellProps) {
                       key={item.to}
                       type="button"
                       onClick={() => go(item.to)}
-                      className="flex w-full items-center gap-3 rounded-2xl px-3 py-3 text-left text-sm font-semibold text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-900"
+                      className="tf-nav-item flex w-full items-center gap-3 px-3 py-3 text-left text-sm font-medium"
                     >
-                      <span className="grid h-9 w-9 place-items-center rounded-xl bg-slate-100 text-slate-500 dark:bg-slate-900 dark:text-slate-300">
+                      <span className="grid h-9 w-9 place-items-center rounded-[10px]" style={{ background: 'var(--tf-sunken)', color: 'var(--tf-ink-muted)' }}>
                         <Icon size={17} />
                       </span>
                       <span>{item.label}</span>
@@ -612,7 +615,7 @@ export default function AppShell({ children }: AppShellProps) {
                   );
                 })
               ) : (
-                <div className="p-8 text-center text-sm text-slate-500">
+                <div className="p-8 text-center text-sm" style={{ color: 'var(--tf-ink-muted)' }}>
                   Tidak ada fitur yang cocok.
                 </div>
               )}

@@ -20,7 +20,7 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 
 type ThemeMode = 'system' | 'light' | 'dark';
-type Accent = 'blue' | 'violet' | 'cyan' | 'emerald';
+type Accent = 'redpen' | 'ledger' | 'ochre' | 'forest';
 type Density = 'compact' | 'comfortable' | 'spacious';
 
 const themes: Array<{ id: ThemeMode; label: string; description: string; Icon: typeof Monitor }> = [
@@ -30,10 +30,10 @@ const themes: Array<{ id: ThemeMode; label: string; description: string; Icon: t
 ];
 
 const accents: Array<{ id: Accent; label: string; dot: string }> = [
-  { id: 'blue', label: 'Ocean', dot: 'bg-blue-500' },
-  { id: 'violet', label: 'Violet', dot: 'bg-violet-500' },
-  { id: 'cyan', label: 'Cyan', dot: 'bg-cyan-500' },
-  { id: 'emerald', label: 'Emerald', dot: 'bg-emerald-500' },
+  { id: 'redpen', label: 'Red Pen', dot: 'bg-[#C1392B]' },
+  { id: 'ledger', label: 'Ledger Blue', dot: 'bg-[#33556F]' },
+  { id: 'ochre', label: 'Highlighter Ochre', dot: 'bg-[#B8790F]' },
+  { id: 'forest', label: 'Forest Ink', dot: 'bg-[#2F5D4F]' },
 ];
 
 const densities: Array<{ id: Density; label: string; description: string }> = [
@@ -46,7 +46,7 @@ function validTheme(value: unknown): value is ThemeMode {
   return value === 'system' || value === 'light' || value === 'dark';
 }
 function validAccent(value: unknown): value is Accent {
-  return value === 'blue' || value === 'violet' || value === 'cyan' || value === 'emerald';
+  return value === 'redpen' || value === 'ledger' || value === 'ochre' || value === 'forest';
 }
 function validDensity(value: unknown): value is Density {
   return value === 'compact' || value === 'comfortable' || value === 'spacious';
@@ -60,7 +60,7 @@ export default function Settings() {
   const [error, setError] = useState('');
 
   const [themeMode, setThemeMode] = useState<ThemeMode>('system');
-  const [accentColor, setAccentColor] = useState<Accent>('blue');
+  const [accentColor, setAccentColor] = useState<Accent>('redpen');
   const [density, setDensity] = useState<Density>('comfortable');
   const [emailNotifications, setEmailNotifications] = useState(true);
   const [deadlineReminder, setDeadlineReminder] = useState(true);
@@ -95,7 +95,7 @@ export default function Settings() {
         if (!active || !data) return;
 
         setThemeMode(validTheme(data.theme_mode) ? data.theme_mode : data.dark_mode ? 'dark' : 'system');
-        setAccentColor(validAccent(data.accent_color) ? data.accent_color : 'blue');
+        setAccentColor(validAccent(data.accent_color) ? data.accent_color : 'redpen');
         setDensity(validDensity(data.density) ? data.density : data.compact_mode ? 'compact' : 'comfortable');
         setEmailNotifications(Boolean(data.email_notifications ?? true));
         setDeadlineReminder(Boolean(data.deadline_reminder ?? true));
@@ -176,7 +176,7 @@ export default function Settings() {
 
   async function reset() {
     setThemeMode('system');
-    setAccentColor('blue');
+    setAccentColor('redpen');
     setDensity('comfortable');
     setAnimations(true);
     setReducedMotion(false);
@@ -191,7 +191,7 @@ export default function Settings() {
           compact_mode: false,
           reduced_motion: false,
           theme_mode: 'system',
-          accent_color: 'blue',
+          accent_color: 'redpen',
           density: 'comfortable',
           show_watermark: true,
           week_starts_monday: true,
@@ -368,7 +368,7 @@ export default function Settings() {
           <div className="p-5 sm:p-6">
             <div className="grid gap-3 sm:grid-cols-3">
               <PreviewBox label="Theme" value={themeMode} />
-              <PreviewBox label="Accent" value={accents.find((item) => item.id === accentColor)?.label ?? 'Ocean'} />
+              <PreviewBox label="Accent" value={accents.find((item) => item.id === accentColor)?.label ?? 'Red Pen'} />
               <PreviewBox label="Density" value={density === 'comfortable' ? 'Comfort' : density} />
             </div>
             {showWatermark && (

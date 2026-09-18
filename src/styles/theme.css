@@ -1,0 +1,278 @@
+/* ==========================================================================
+   Marginalia — Fathur SchoolHub theme engine
+   Import this once, e.g. in src/main.tsx: import './styles/theme.css'
+   ========================================================================== */
+
+
+:root {
+  /* ---- Base surfaces (light) ---- */
+  --tf-canvas: #EFF1E9;
+  --tf-card: #FBFBF7;
+  --tf-sunken: #E4E7DC;
+  --tf-ink: #1C2420;
+  --tf-ink-muted: #5B655D;
+  --tf-rule: rgba(28, 36, 32, 0.14);
+
+  /* ---- Accent: Red Pen (default) ---- */
+  --tf-accent: #C1392B;
+  --tf-accent-hover: #A62F22;
+  --tf-accent-soft: rgba(193, 57, 43, 0.10);
+  --tf-on-accent: #FFF8F4;
+
+  /* ---- Type ---- */
+  --tf-font-display: 'Fraunces', Georgia, serif;
+  --tf-font-body: 'Work Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* ---- Shape ---- */
+  --tf-radius-card: 16px;
+  --tf-radius-control: 10px;
+  --tf-radius-pill: 999px;
+  --tf-radius-tag: 8px;
+
+  /* ---- Spacing (compact mode overrides these) ---- */
+  --tf-space-section: 32px;
+  --tf-space-card: 20px;
+  --tf-space-control-y: 10px;
+  --tf-space-control-x: 16px;
+
+  /* ---- Motion ---- */
+  --tf-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --tf-duration: 160ms;
+}
+
+/* ==========================================================================
+   Dark mode — driven by the existing `dark` class on <html>
+   ========================================================================== */
+html.dark {
+  --tf-canvas: #141F1A;
+  --tf-card: #1D2B24;
+  --tf-sunken: #0F1712;
+  --tf-ink: #ECEFE7;
+  --tf-ink-muted: #9BAA9F;
+  --tf-rule: rgba(236, 239, 231, 0.14);
+
+  --tf-accent: #E2564A;
+  --tf-accent-hover: #C1392B;
+  --tf-accent-soft: rgba(226, 86, 74, 0.16);
+  --tf-on-accent: #171717;
+}
+
+/* ==========================================================================
+   Accent variants — driven by data-tf-accent on <html>, set from Settings
+   ========================================================================== */
+html[data-tf-accent='ledger'] {
+  --tf-accent: #33556F;
+  --tf-accent-hover: #274257;
+  --tf-accent-soft: rgba(51, 85, 111, 0.10);
+}
+html.dark[data-tf-accent='ledger'] {
+  --tf-accent: #6E9CBE;
+  --tf-accent-hover: #33556F;
+  --tf-accent-soft: rgba(110, 156, 190, 0.16);
+  --tf-on-accent: #0E1720;
+}
+
+html[data-tf-accent='ochre'] {
+  --tf-accent: #B8790F;
+  --tf-accent-hover: #96620C;
+  --tf-accent-soft: rgba(184, 121, 15, 0.12);
+}
+html.dark[data-tf-accent='ochre'] {
+  --tf-accent: #E3AA3E;
+  --tf-accent-hover: #B8790F;
+  --tf-accent-soft: rgba(227, 170, 62, 0.18);
+  --tf-on-accent: #1A1200;
+}
+
+html[data-tf-accent='forest'] {
+  --tf-accent: #2F5D4F;
+  --tf-accent-hover: #23473C;
+  --tf-accent-soft: rgba(47, 93, 79, 0.10);
+}
+html.dark[data-tf-accent='forest'] {
+  --tf-accent: #6FB89E;
+  --tf-accent-hover: #2F5D4F;
+  --tf-accent-soft: rgba(111, 184, 158, 0.16);
+  --tf-on-accent: #0B1512;
+}
+
+/* ==========================================================================
+   Density — driven by `compact-mode` class on <body>. Spacing only, never
+   radius or type size, per the design system's own rule.
+   ========================================================================== */
+body.compact-mode {
+  --tf-space-section: 20px;
+  --tf-space-card: 14px;
+  --tf-space-control-y: 6px;
+  --tf-space-control-x: 12px;
+}
+
+/* ==========================================================================
+   Reduced motion — driven by `reduce-motion` class on <html>
+   ========================================================================== */
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+.tf-shell {
+  background: var(--tf-canvas);
+  color: var(--tf-ink);
+  font-family: var(--tf-font-body);
+}
+
+h1, h2, h3, .tf-display {
+  font-family: var(--tf-font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+
+.tf-card {
+  background: var(--tf-card);
+  border: 1px solid var(--tf-rule);
+  border-radius: var(--tf-radius-card);
+}
+
+.tf-header {
+  background: var(--tf-card);
+  border-bottom: 1px solid var(--tf-rule);
+}
+
+.tf-hairline {
+  border-color: var(--tf-rule);
+}
+
+.tf-btn-primary {
+  background: var(--tf-accent);
+  color: var(--tf-on-accent);
+  border-radius: var(--tf-radius-control);
+  font-weight: 500;
+  border: none;
+  transition: background var(--tf-duration) var(--tf-ease), transform var(--tf-duration) var(--tf-ease);
+}
+.tf-btn-primary:hover { background: var(--tf-accent-hover); }
+.tf-btn-primary:active { transform: translateY(1px); }
+
+.tf-btn-ghost {
+  background: transparent;
+  color: var(--tf-ink);
+  border: 1px solid var(--tf-rule);
+  border-radius: var(--tf-radius-control);
+  transition: background var(--tf-duration) var(--tf-ease), border-color var(--tf-duration) var(--tf-ease);
+}
+.tf-btn-ghost:hover { background: var(--tf-sunken); }
+
+.tf-icon-btn {
+  color: var(--tf-ink-muted);
+  border: 1px solid var(--tf-rule);
+  border-radius: var(--tf-radius-control);
+  background: var(--tf-card);
+  transition: background var(--tf-duration) var(--tf-ease), color var(--tf-duration) var(--tf-ease), transform var(--tf-duration) var(--tf-ease);
+}
+.tf-icon-btn:hover { background: var(--tf-sunken); color: var(--tf-ink); transform: translateY(-1px); }
+
+.tf-input {
+  background: var(--tf-sunken);
+  color: var(--tf-ink);
+  border: 1px solid var(--tf-rule);
+  border-radius: var(--tf-radius-control);
+}
+.tf-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--tf-accent);
+}
+
+.tf-kbd {
+  background: var(--tf-sunken);
+  color: var(--tf-ink-muted);
+  border: 1px solid var(--tf-rule);
+  border-radius: 6px;
+  font-family: var(--tf-font-body);
+}
+
+/* Nav item + the Margin Rule signature device */
+.tf-nav-item {
+  position: relative;
+  color: var(--tf-ink-muted);
+  border-radius: var(--tf-radius-control);
+  transition: background var(--tf-duration) var(--tf-ease), color var(--tf-duration) var(--tf-ease);
+}
+.tf-nav-item:hover { background: var(--tf-sunken); color: var(--tf-ink); }
+.tf-nav-item.is-active {
+  background: var(--tf-accent-soft);
+  color: var(--tf-ink);
+  font-weight: 500;
+}
+.tf-nav-item.is-active::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--tf-accent);
+}
+
+/* Pinned card / today-cell — same device, different host */
+.tf-marked {
+  position: relative;
+}
+.tf-marked::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--tf-accent);
+}
+
+.tf-avatar {
+  background: var(--tf-accent);
+  color: var(--tf-on-accent);
+  border-radius: 12px;
+}
+
+.tf-badge-count {
+  background: var(--tf-accent);
+  color: var(--tf-on-accent);
+  border-radius: var(--tf-radius-pill);
+}
+
+/* Status stamp — reserve for a single flourish per screen (see DESIGN.md) */
+.tf-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--tf-font-display);
+  font-weight: 500;
+  color: var(--tf-accent);
+  border: 1.5px dashed var(--tf-accent);
+  border-radius: var(--tf-radius-tag);
+  padding: 2px 8px;
+  transform: rotate(-2deg);
+}
+
+/* Accent swatch button, used by the appearance settings panel */
+.tf-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--tf-radius-pill);
+  border: 2px solid transparent;
+  transition: border-color var(--tf-duration) var(--tf-ease), transform var(--tf-duration) var(--tf-ease);
+}
+.tf-swatch:hover { transform: translateY(-1px); }
+.tf-swatch.is-selected { border-color: var(--tf-ink); }

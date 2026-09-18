@@ -603,10 +603,10 @@ html.dark [role="dialog"] .bg-white\/95 {
   --tf-shadow-soft: 0 20px 60px rgba(15,23,42,.07);
 }
 
-html[data-tf-accent='violet'] { --tf-accent: #7c3aed; }
-html[data-tf-accent='cyan'] { --tf-accent: #0891b2; }
-html[data-tf-accent='emerald'] { --tf-accent: #059669; }
-html[data-tf-accent='blue'] { --tf-accent: #2563eb; }
+/* Accent variants now live in src/styles/theme.css (Marginalia design
+   system: redpen/ledger/ochre/forest). The old blue/violet/cyan/emerald
+   rules were removed here since settings.accent_color no longer stores
+   those values (see supabase/migrations/0024_marginalia_theme.sql). */
 
 .compact-mode .card-premium { padding-top: .75rem !important; padding-bottom: .75rem !important; }
 .compact-mode .app-shell main { gap: .75rem; }

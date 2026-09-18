@@ -7,7 +7,7 @@ export type UserSettingsPayload = {
   compact_mode?: boolean;
   reduced_motion?: boolean;
   theme_mode?: 'system' | 'light' | 'dark';
-  accent_color?: 'blue' | 'violet' | 'cyan' | 'emerald';
+  accent_color?: 'redpen' | 'ledger' | 'ochre' | 'forest';
   density?: 'compact' | 'comfortable' | 'spacious';
   show_watermark?: boolean;
   week_starts_monday?: boolean;
