@@ -274,12 +274,12 @@ export default function Settings() {
                     type="button"
                     onClick={() => setThemeMode(id)}
                     aria-pressed={selected}
-                    className={[
-                      'rounded-2xl border p-4 text-left transition duration-200',
-                      selected
-                        ? 'border-blue-300 bg-blue-50 text-blue-700 shadow-sm dark:border-blue-800 dark:bg-blue-950/30 dark:text-blue-200'
-                        : 'border-slate-200 text-slate-700 hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-900',
-                    ].join(' ')}
+                    className="rounded-none border p-4 text-left transition duration-200"
+                    style={{
+                      borderColor: selected ? 'var(--tf-accent)' : 'var(--tf-rule)',
+                      background: selected ? 'var(--tf-accent-soft)' : 'var(--tf-card)',
+                      color: selected ? 'var(--tf-accent)' : 'var(--tf-ink)',
+                    }}
                   >
                     <Icon size={19} />
                     <div className="mt-3 text-sm font-extrabold">{label}</div>
@@ -291,24 +291,50 @@ export default function Settings() {
           </div>
 
           <div className="mt-6">
-            <div className="label">Accent</div>
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <div className="label">Template tampilan</div>
+            <p className="mb-3 text-xs" style={{ color: 'var(--tf-ink-muted)' }}>
+              Pilih salah satu template warna Marginalia. Perubahan langsung terlihat di pratinjau mini di bawah setiap kartu.
+            </p>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {accents.map((accent) => {
                 const selected = accentColor === accent.id;
+                const swatchColor: Record<Accent, string> = {
+                  redpen: '#C1392B',
+                  ledger: '#33556F',
+                  ochre: '#B8790F',
+                  forest: '#2F5D4F',
+                };
+                const c = swatchColor[accent.id];
                 return (
                   <button
                     key={accent.id}
                     type="button"
                     onClick={() => setAccentColor(accent.id)}
-                    className={`flex items-center gap-2 rounded-2xl border px-3 py-3 text-xs font-bold transition ${
-                      selected
-                        ? 'border-blue-300 ring-2 ring-blue-100 dark:border-blue-800 dark:ring-blue-950/40'
-                        : 'border-slate-200 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900'
-                    }`}
+                    className="flex flex-col gap-2 rounded-none border p-3 text-left transition"
+                    style={{
+                      borderColor: selected ? c : 'var(--tf-rule)',
+                      boxShadow: selected ? `inset 0 0 0 1px ${c}` : 'none',
+                      background: 'var(--tf-card)',
+                    }}
                   >
-                    <span className={`h-4 w-4 rounded-full ${accent.dot}`} />
-                    {accent.label}
-                    {selected && <Check size={14} className="ml-auto" />}
+                    {/* mini layout preview: sidebar + header + active nav + button */}
+                    <div className="flex h-16 overflow-hidden rounded-none" style={{ border: '1px solid var(--tf-rule)' }}>
+                      <div className="flex w-6 flex-col gap-1 p-1" style={{ background: 'var(--tf-sunken)' }}>
+                        <span className="h-1.5 w-full rounded-none" style={{ background: c }} />
+                        <span className="h-1.5 w-full rounded-none" style={{ background: 'var(--tf-rule)' }} />
+                        <span className="h-1.5 w-full rounded-none" style={{ background: 'var(--tf-rule)' }} />
+                      </div>
+                      <div className="flex flex-1 flex-col gap-1 p-1.5">
+                        <span className="h-1.5 w-1/2 rounded-none" style={{ background: 'var(--tf-rule)' }} />
+                        <span className="h-3 w-1/3 rounded-none" style={{ background: c }} />
+                        <span className="h-1.5 w-3/4 rounded-none" style={{ background: 'var(--tf-sunken)' }} />
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs font-bold" style={{ color: 'var(--tf-ink)' }}>
+                      <span className="h-3 w-3 rounded-full" style={{ background: c }} />
+                      {accent.label}
+                      {selected && <Check size={14} className="ml-auto" style={{ color: c }} />}
+                    </div>
                   </button>
                 );
               })}
