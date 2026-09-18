@@ -1,0 +1,67 @@
+{
+    "Senin": [
+        {
+            "waktu": "07.00-09.30",
+            "mata_kuliah": "Language Assessment",
+            "dosen": "Dr. Metty Augustine Primary, S.Pd., M.Pd.",
+            "ruang": "ING-4 (ZOOM)"
+        },
+        {
+            "waktu": "09.35-12.05",
+            "mata_kuliah": "Quantitative Research in ELT",
+            "dosen": "Nita Sari Narulita Dewi, S.Pd., M.Pd.",
+            "ruang": "ING-3 (ZOOM)"
+        }
+    ],
+    "Selasa": [
+        {
+            "waktu": "07.00-09.30",
+            "mata_kuliah": "Qualitative Research in ELT",
+            "dosen": "Dr. Agis Andriani, S.Pd., M.Hum.",
+            "ruang": "ING-6 (ZOOM)"
+        },
+        {
+            "waktu": "09.35-12.05",
+            "mata_kuliah": "Methodology in ELT",
+            "dosen": "Dr. Yusup Supriyono, M.Pd.",
+            "ruang": "C.2.2"
+        },
+        {
+            "waktu": "14.45-16.25",
+            "mata_kuliah": "Micro-Teaching",
+            "dosen": "Junjun Muhamad Ramdani, S.Pd., M.Pd., Ph.D.",
+            "ruang": "MT.1 - Micro Teaching 1"
+        }
+    ],
+    "Rabu": [],
+    "Kamis": [
+        {
+            "waktu": "13.00-14.40",
+            "mata_kuliah": "Language Material Evaluation and Design",
+            "dosen": "Dr. Asri Siti Fatimah, M.Pd.",
+            "ruang": "ING-5 (ZOOM)"
+        },
+        {
+            "waktu": "15.35-17.15",
+            "mata_kuliah": "Lesson Planning in ELT",
+            "dosen": "Dr. Metty Augustine Primary, S.Pd., M.Pd.",
+            "ruang": "C.2.2"
+        }
+    ],
+    "Jumat": [
+        {
+            "waktu": "13.00-15.30",
+            "mata_kuliah": "English for Tourism",
+            "dosen": "*) ( Dr. Ratu Sarah Pujasari, M.Pd.",
+            "ruang": "ING-2 (ZOOM)"
+        }
+    ],
+    "Sabtu": [
+        {
+            "waktu": "13.00-14.40",
+            "mata_kuliah": "Literasi Teknologi Informasi",
+            "dosen": "Dr. Ratu Sarah Pujasari, M.Pd. - Santiana, S.S., M.Pd.",
+            "ruang": "ING-2 (ZOOM)"
+        }
+    ]
+}

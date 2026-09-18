@@ -1,0 +1,16 @@
+import { useEffect, useState } from 'react';
+import { Activity, Database, RadioTower, ShieldCheck, RefreshCw } from 'lucide-react';
+import AdminHeader from '../../components/admin/AdminHeader';
+import Card from '../../components/ui/Card';
+import Button from '../../components/ui/Button';
+import Badge from '../../components/ui/Badge';
+import { supabase } from '../../lib/supabase';
+import { firebaseConfigured } from '../../lib/firebase';
+
+type Check = { label:string; ok:boolean; detail:string };
+export default function AdminHealth(){
+  const [checks,setChecks]=useState<Check[]>([]); const [loading,setLoading]=useState(true);
+  const run=async()=>{setLoading(true); const started=performance.now(); const tables=['users','tasks','schedule','notifications','audit_logs'] as const; const results:Check[]=[]; for(const table of tables){ const res=await supabase.from(table).select('*',{count:'exact',head:true}); results.push({label:`Supabase • ${table}`,ok:!res.error,detail:res.error?res.error.message:`OK • ${res.count ?? 0} rows`}); } const auth=await supabase.auth.getSession(); results.unshift({label:'Supabase Auth',ok:!auth.error,detail:auth.error?auth.error.message:'Session endpoint reachable'}); results.push({label:'Firebase config',ok:firebaseConfigured,detail:firebaseConfigured?'Konfigurasi Firebase tersedia':'Firebase belum terkonfigurasi'}); results.push({label:'Latency',ok:true,detail:`${Math.round(performance.now()-started)} ms untuk health checks`}); setChecks(results); setLoading(false);};
+  useEffect(()=>{void run();},[]);
+  return <div className="space-y-6 fade-up"><div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between"><AdminHeader title="System Health" description="Pemeriksaan konektivitas dan kesiapan layanan dari website admin."/><Button variant="outline" onClick={()=>void run()} loading={loading} icon={<RefreshCw size={15}/>}>Run Checks</Button></div><div className="grid gap-4 md:grid-cols-3"><Card className="p-5"><div className="flex items-center gap-2 text-sm font-bold"><Database size={17}/> Database</div><div className="mt-2 text-2xl font-black">{checks.filter(c=>c.label.startsWith('Supabase')).filter(c=>c.ok).length}</div></Card><Card className="p-5"><div className="flex items-center gap-2 text-sm font-bold"><RadioTower size={17}/> Firebase</div><div className="mt-2"><Badge tone={firebaseConfigured?'green':'red'}>{firebaseConfigured?'READY':'CHECK'}</Badge></div></Card><Card className="p-5"><div className="flex items-center gap-2 text-sm font-bold"><ShieldCheck size={17}/> Security</div><div className="mt-2 flex items-center gap-2"><Activity size={15} className="text-emerald-500"/><span className="text-sm font-semibold">RLS-aware admin UI</span></div></Card></div><Card className="overflow-hidden"><div className="divide-y divide-slate-100 dark:divide-slate-800">{checks.map(check=><div key={check.label} className="flex items-center gap-3 p-4"><div className={`h-2.5 w-2.5 rounded-full ${check.ok?'bg-emerald-500':'bg-rose-500'}`}/><div className="min-w-0 flex-1"><div className="text-sm font-bold">{check.label}</div><div className="text-xs text-slate-500">{check.detail}</div></div><Badge tone={check.ok?'green':'red'}>{check.ok?'OK':'ERROR'}</Badge></div>)}</div></Card></div>;
+}

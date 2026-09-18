@@ -1,0 +1,10 @@
+{
+  "name": "Fathur SchoolHub",
+  "short_name": "SchoolHub",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090A0F",
+  "theme_color": "#090A0F",
+  "lang": "id",
+  "description": "Personal School Operating System untuk Fathur SchoolHub"
+}
