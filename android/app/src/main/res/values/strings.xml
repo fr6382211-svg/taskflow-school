@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">FAZET</string>
+    <string name="title_activity_main">FAZET</string>
+    <string name="package_name">com.fathur.schoolhub</string>
+    <string name="custom_url_scheme">com.fathur.schoolhub</string>
+</resources>

@@ -1,0 +1,203 @@
+:root {
+  --stitch-canvas:#090A0F;
+  --stitch-s1:#11131A;
+  --stitch-s2:#181B26;
+  --stitch-s3:#222634;
+  --stitch-border:rgba(255,255,255,.07);
+  --stitch-border-strong:rgba(255,255,255,.14);
+  --stitch-text:#F8FAFC;
+  --stitch-secondary:#94A3B8;
+  --stitch-tertiary:#64748B;
+  --stitch-disabled:#334155;
+  --stitch-primary:#6366F1;
+  --stitch-primary-hover:#4F46E5;
+  --stitch-success:#10B981;
+  --stitch-warning:#F59E0B;
+  --stitch-danger:#EF4444;
+  --stitch-info:#0EA5E9;
+}
+
+html { color-scheme: dark; }
+body { background: var(--stitch-canvas) !important; color: var(--stitch-text); }
+body::before { display:none !important; }
+.app-shell { background: var(--stitch-canvas) !important; background-image:none !important; }
+
+/* Stitch design system: dark-first, hairline surfaces, precise spacing. */
+.app-shell .hub-surface,
+.hub-dashboard .hub-surface,
+.card-premium,
+.app-shell main > * .bg-white,
+.app-shell main > * .bg-white\/90 {
+  background:var(--stitch-s1) !important;
+  border:1px solid var(--stitch-border) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.03) !important;
+  backdrop-filter:none !important;
+}
+
+.hub-dashboard .hub-surface:hover { border-color:var(--stitch-border-strong) !important; }
+
+.hub-chip {
+  min-height:24px;
+  border-radius:8px !important;
+  background:var(--stitch-s2) !important;
+  border-color:var(--stitch-border) !important;
+  color:var(--stitch-secondary) !important;
+  font-family:'JetBrains Mono',ui-monospace,monospace;
+  font-size:10px;
+  letter-spacing:.04em;
+}
+
+.hub-kpi {
+  min-height:118px;
+  padding:16px !important;
+  border-radius:12px !important;
+  background:var(--stitch-s1) !important;
+  border:1px solid var(--stitch-border) !important;
+}
+.hub-kpi__label { color:var(--stitch-secondary) !important; }
+.hub-kpi__value { color:var(--stitch-text); font-family:Inter,ui-sans-serif,sans-serif; }
+.hub-kpi__meta { color:var(--stitch-tertiary) !important; }
+.hub-progress { background:var(--stitch-s3) !important; height:5px; }
+
+.hub-task,
+.hub-event,
+.hub-side-stat,
+.app-shell main .rounded-xl.border,
+.app-shell main .rounded-2xl.border {
+  border-radius:10px !important;
+  border-color:var(--stitch-border) !important;
+  background:var(--stitch-s1) !important;
+}
+.hub-task:hover,
+.hub-event:hover,
+.hub-side-stat:hover { background:var(--stitch-s2) !important; border-color:var(--stitch-border-strong) !important; }
+.hub-task__meta,.hub-event__meta { color:var(--stitch-tertiary) !important; }
+.hub-event--active { box-shadow:inset 3px 0 0 var(--stitch-success) !important; border-color:rgba(16,185,129,.25) !important; }
+.hub-event__time,.hub-clock { color:#C0C1FF !important; font-family:'JetBrains Mono',ui-monospace,monospace; }
+
+/* Header aligned to the 256px Stitch workspace. */
+.app-shell > .min-w-0.flex-1 > header {
+  background:rgba(9,10,15,.92) !important;
+  border-bottom:1px solid var(--stitch-border) !important;
+  box-shadow:none !important;
+  backdrop-filter:blur(16px);
+}
+.app-shell > .min-w-0.flex-1 > header button {
+  border-color:var(--stitch-border) !important;
+}
+.app-shell > .min-w-0.flex-1 > header .bg-white { background:var(--stitch-s1) !important; }
+
+/* Sidebar visual mapping to Stitch reference. */
+.stitch-sidebar {
+  width:256px;
+  background:var(--stitch-s1) !important;
+  border-right:1px solid var(--stitch-border) !important;
+  box-shadow:1px 0 0 rgba(255,255,255,.025) !important;
+}
+.stitch-sidebar__brand {
+  height:56px;
+  border-bottom:1px solid var(--stitch-border);
+}
+.stitch-sidebar__brand img { height:34px; width:34px; object-fit:cover; border-radius:8px; }
+.stitch-sidebar a {
+  border-radius:8px !important;
+  color:var(--stitch-secondary) !important;
+  background:transparent !important;
+  border-left:2px solid transparent;
+}
+.stitch-sidebar a:hover { background:var(--stitch-s2) !important; color:var(--stitch-text) !important; }
+.stitch-sidebar a[aria-current='page'] {
+  background:var(--stitch-s2) !important;
+  color:var(--stitch-text) !important;
+  border-left-color:var(--stitch-primary) !important;
+}
+.stitch-sidebar__session {
+  background:var(--stitch-s2);
+  border:1px solid var(--stitch-border);
+  border-radius:8px;
+}
+
+/* Auth/Login follows the Stitch identity-gateway visual direction. */
+.auth-page { background:var(--stitch-canvas) !important; color:var(--stitch-text); }
+.auth-visual { background:var(--stitch-canvas) !important; border-right:1px solid var(--stitch-border); }
+.auth-panel { background:var(--stitch-s1) !important; }
+.auth-visual .auth-stat-card,
+.auth-visual .rounded-2xl.border,
+.auth-panel .rounded-2xl.border,
+.auth-panel .rounded-xl.border {
+  background:var(--stitch-s1) !important;
+  border-color:var(--stitch-border) !important;
+  box-shadow:none !important;
+}
+.auth-grid { opacity:.18 !important; }
+.auth-orb { opacity:.18 !important; }
+
+/* TimeBox wrapper: preserve functional composition, restyle to Stitch reference. */
+.timebox-shell {
+  background:var(--stitch-canvas) !important;
+  border:1px solid var(--stitch-border) !important;
+  border-radius:12px !important;
+  box-shadow:none !important;
+  padding:0 !important;
+}
+.timebox-shell .timebox-main { gap:16px !important; }
+.timebox-shell .timebox-grid { gap:16px !important; }
+.timebox-shell .timebox-clock-card,
+.timebox-shell section,
+.timebox-shell .liquid-glass-card,
+.timebox-shell .liquid-glass-panel {
+  background:var(--stitch-s1) !important;
+  border:1px solid var(--stitch-border) !important;
+  box-shadow:none !important;
+  backdrop-filter:none !important;
+}
+.timebox-shell .timebox-clock {
+  color:#C0C1FF !important;
+  font-family:'JetBrains Mono',ui-monospace,monospace !important;
+  font-weight:600 !important;
+  letter-spacing:-.02em !important;
+}
+.timebox-shell .timebox-date { border-left-color:var(--stitch-border) !important; }
+
+/* Mobile: dedicated composition, same design language. */
+@media (max-width:1023px) {
+  .stitch-sidebar { width:256px; }
+  .app-shell > .min-w-0.flex-1 > header { left:0 !important; }
+}
+@media (max-width:767px) {
+  .app-shell main { padding-inline:16px !important; }
+  .hub-dashboard { gap:12px !important; }
+  .hub-kpi { min-height:104px; padding:13px !important; }
+  .hub-kpi__value { font-size:26px !important; }
+  .hub-task,.hub-event,.hub-side-stat { border-radius:8px !important; }
+  .timebox-shell { border-radius:10px !important; }
+  .timebox-shell .timebox-clock { font-size:clamp(32px,13vw,48px) !important; white-space:nowrap; }
+  .timebox-shell .timebox-date { border-left:0 !important; border-top:1px solid var(--stitch-border) !important; padding-top:12px !important; }
+}
+
+/* Keep interactive feedback precise and low-noise. */
+button,input,select,textarea { font-family:Inter,ui-sans-serif,system-ui,sans-serif; }
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible { outline:2px solid var(--stitch-primary) !important; outline-offset:2px; }
+
+/* Light mode remains available but is intentionally based on the Stitch palette. */
+html:not(.dark) body { background:#F8FAFC !important; color:#0F172A; }
+html:not(.dark) .app-shell { background:#F8FAFC !important; }
+html:not(.dark) .app-shell .hub-surface,
+html:not(.dark) .hub-dashboard .hub-surface,
+html:not(.dark) .card-premium { background:#FFFFFF !important; border-color:rgba(15,23,42,.08) !important; box-shadow:0 1px 2px rgba(15,23,42,.04) !important; }
+html:not(.dark) .hub-kpi { background:#FFFFFF !important; border-color:rgba(15,23,42,.08) !important; }
+html:not(.dark) .hub-task,
+html:not(.dark) .hub-event,
+html:not(.dark) .hub-side-stat { background:#FFFFFF !important; border-color:rgba(15,23,42,.08) !important; }
+
+/* My Minee — romantic visual layer, intentionally scoped to this feature. */
+.my-minee-page { --minee-rose: #fb7185; --minee-rose-soft: rgba(251,113,133,.10); }
+.my-minee-page button:focus-visible, .my-minee-page a:focus-visible { outline: 2px solid rgba(244,63,94,.75); outline-offset: 3px; }
+
+/* My Minee — romantic visual layer, intentionally scoped to this feature. */
+.my-minee-page { --minee-rose: #fb7185; --minee-rose-soft: rgba(251,113,133,.10); }
+.my-minee-page button:focus-visible, .my-minee-page a:focus-visible { outline: 2px solid rgba(244,63,94,.75); outline-offset: 3px; }
+
+/* My Minee — romantic visual layer, intentionally scoped to this feature. */
+.my-minee-page { --minee-rose: #fb7185; --minee-rose-soft: rgba(251,113,133,.10); }
+.my-minee-page button:focus-visible, .my-minee-page a:focus-visible { outline: 2px solid rgba(244,63,94,.75); outline-offset: 3px; }
